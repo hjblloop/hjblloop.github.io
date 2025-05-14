@@ -31,17 +31,23 @@ export default function Home() {
           {/* Job 1 */}
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
             <h3 className="text-xl font-semibold">Software Engineer</h3>
-            <p className="text-sm text-gray-500">Company Name - Location</p>
+            <p className="text-sm text-gray-500">Epic Systems - Verona, WI</p>
             <p className="mt-2">
-              Developed and maintained web applications using React and Node.js.
+              Worked collaboratively with cross-functional teams to design, develop, and enhance both internal and external software applications, resulting in improved user experience. Mainly used C#, TypeScript, React, and SQL to develop resonsive software applications at large scale.
             </p>
           </div>
           {/* Job 2 */}
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold">Intern</h3>
-            <p className="text-sm text-gray-500">Company Name - Location</p>
+            <h3 className="text-xl font-semibold">Researcher</h3>
+            <p className="text-sm text-gray-500">Burton Lab - Atlanta, GA</p>
             <p className="mt-2">
-              Assisted in the development of a mobile application using React Native.
+              Managed multiple online and in-person research projects, utilizing a diverse range of software, coding languages, and algorithms to analyze and model soft matter phenomena. Used Python, MATLAB, and TensorFlow to incorporate machine learning into research projects.
+            </p>
+            <p className="mt-2">
+              Honors Thesis: <a href="https://etd.library.emory.edu/concern/etds/m900nv74g?locale=en" className="text-blue-500 hover:underline">"Accurate Imaging of Particle Motion in Dusty Plasmas"</a>
+            </p>
+            <p className="mt-2">
+              Publications: <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.035303" className="text-blue-500 hover:underline">"Extracting forces from noisy dynamics in dusty plasmas"</a>
             </p>
           </div>
         </div>
@@ -52,7 +58,7 @@ export default function Home() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
             <Image
-              src="/typescript.png"
+              src="/logos/Typescript_logo_2020.svg"
               alt="TypeScript"
               width={50}
               height={50}
@@ -62,7 +68,7 @@ export default function Home() {
           </div>
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
             <Image
-              src="/react.png"
+              src="/logos/react-icon.svg"
               alt="React"
               width={50}
               height={50}
@@ -72,7 +78,7 @@ export default function Home() {
           </div>
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
             <Image
-              src="/nextjs.png"
+              src="/logos/Nextjs-logo.svg"
               alt="Next.js"
               width={50}
               height={50}
@@ -80,9 +86,19 @@ export default function Home() {
             />
             <h3 className="text-lg font-semibold">Next.js</h3>
           </div>
+           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
+            <Image
+              src="/logos/Node.js_logo.svg"
+              alt="Node.js"
+              width={50}
+              height={50}
+              className="mx-auto mb-4"
+            />
+            <h3 className="text-lg font-semibold">PostgreSQL</h3>
+          </div>
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
             <Image
-              src="/postgresql.png"
+              src="/logos/Postgresql_elephant.svg"
               alt="PostgreSQL"
               width={50}
               height={50}
@@ -92,7 +108,7 @@ export default function Home() {
           </div>
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
             <Image
-              src="/python.png"
+              src="/logos/python-logo-notext.svg"
               alt="Python"
               width={50}
               height={50}
@@ -102,67 +118,7 @@ export default function Home() {
           </div>
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
             <Image
-              src="/tailwindcss.png"
-              alt="Tailwind CSS"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">Tailwind CSS</h3>
-          </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/electron.png"
-              alt="Electron"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">Electron</h3>
-          </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/numpy.png"
-              alt="NumPy"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">NumPy</h3>
-          </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/pandas.png"
-              alt="Pandas"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">Pandas</h3>
-          </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/html.png"
-              alt="HTML"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">HTML</h3>
-          </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/css.png"
-              alt="CSS"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">CSS</h3>
-          </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/javascript.png"
+              src="/logos/Javascript_Logo.png"
               alt="JavaScript"
               width={50}
               height={50}
@@ -172,7 +128,7 @@ export default function Home() {
           </div>
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
             <Image
-              src="/git.png"
+              src="/logos/Git-logo.svg"
               alt="Git"
               width={50}
               height={50}
@@ -180,17 +136,7 @@ export default function Home() {
             />
             <h3 className="text-lg font-semibold">Git</h3>
           </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/github.png"
-              alt="GitHub"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">GitHub</h3>
-          </div>
-          </div>
+        </div>
       </section>
 
       {/* Projects Section */}
@@ -206,9 +152,9 @@ export default function Home() {
               height={200}
               className="rounded-md"
             />
-            <h3 className="text-xl font-semibold mt-4">Easy Invoice</h3>
+            <h3 className="text-xl font-semibold mt-4">GongBu</h3>
             <p className="text-sm mt-2">
-              A simple invoice generator that allows users to create and manage invoices easily. Built with React, TailwindCSS, Typescript, and Electron.
+              An AI-powered interactive learning tool allowing users to learn specific topics through personalized learning. Built with TypeScript, React, PostgreSQL and Google Gemini.
             </p>
             <a
               href="#"
@@ -226,7 +172,7 @@ export default function Home() {
               height={200}
               className="rounded-md"
             />
-            <h3 className="text-xl font-semibold mt-4">BrainMax</h3>
+            <h3 className="text-xl font-semibold mt-4">Math Modeling</h3>
             <p className="text-sm mt-2">
               A math library to visualize advanced math and physics concepts. Built with Python, pandas, and numpy.
             </p>
