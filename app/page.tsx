@@ -1,13 +1,66 @@
+'use client'
+
 import Image from "next/image";
+import VolleyBall from './VolleyBall';
+import {useState} from 'react';
 
 export default function Home() {
+  const [showSpeech, setShowSpeech] = useState(false);
+
+  const handleVolleyBallAnimationEnd = () => {
+    setShowSpeech(true);
+  };
+
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+    <div className="scroll-smooth bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+      {/* Top Navigation Bar */}
+      <nav className="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur z-50 shadow-sm">
+        <div className="max-w-7xl mx-auto flex items-center justify-center px-6 py-3">
+          <div className="space-x-6">
+            <a href="#experience" className="text-2xl text-gray-700 dark:text-gray-100 hover:text-blue-600 transition font-medium">
+              Work Experience
+            </a>
+            <a href="#skills" className="text-2xl text-gray-700 dark:text-gray-100 hover:text-blue-600 transition font-medium">
+              Skills
+            </a>
+            <a href="#projects" className="text-2xl text-gray-700 dark:text-gray-100 hover:text-blue-600 transition font-medium">
+              Projects
+            </a>
+            <a target="_blank"
+                rel="noopener noreferrer" href="https://github.com/hjblloop/" className="text-2xl text-gray-700 dark:text-gray-100 hover:text-blue-600 transition font-medium">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </nav>
+      {/* Add padding to offset fixed nav */}
+      <div className="" />
       {/* Hero Section */}
-      <header className="flex flex-col items-center justify-center text-center py-20 bg-gradient-to-b from-blue-500 to-blue-700 text-white">
-        <h1 className="text-4xl sm:text-6xl font-bold mb-4">Jonathan Cho</h1>
-        <p className="text-lg sm:text-xl max-w-2xl">
-          Software Engineer
+      <header className="flex flex-col items-center justify-center text-center py-20 bg-gradient-to-b from-blue-400 to-blue-500 text-black">
+        {/* Profile Picture */}
+        <div className="mb-6">
+          {!showSpeech ? (
+            <Image
+              src="/profile1.png" 
+              alt="Jonathan Cho"
+              width={500}
+              height={500}
+              className="rounded-full border-4 border-white shadow-lg mx-auto"
+              priority
+            />) : (
+            <Image
+              src="/profile2.png" 
+              alt="Jonathan Cho"
+              width={500}
+              height={500}
+              className="rounded-full border-4 border-white shadow-lg mx-auto"
+              priority
+            />
+          )
+          }
+        </div>
+        <p className="text-lg font-bold sm:text-3xl max-w-5xl">
+          Hey, I'm  <span className="font-extrabold">Jonathan Cho</span>. I love learning new things and building fun and elegant projects. You can see what I'm learning here.
         </p>
         <a
           href="#projects"
@@ -16,169 +69,238 @@ export default function Home() {
           View My Work
         </a>
       </header>
-
-      {/* About Section */}
-      <section id="about" className="py-20 px-8 sm:px-20">
-        <h2 className="text-3xl font-bold text-center mb-8">About Me</h2>
-        <p className="text-lg max-w-3xl mx-auto text-center">
-          I specialize in TypeScript, React, Next.js, PostgreSQL and Python to create seamless digital experiences.
-        </p>
-      </section>
+      <VolleyBall onAnimationEnd={handleVolleyBallAnimationEnd}/>
       {/* Work Experience Section */}
-      <section id="experience" className="py-20 px-8 sm:px-20 bg-gray-200 dark:bg-gray-800">
-        <h2 className="text-3xl font-bold text-center mb-8">Work Experience</h2>
-        <div className="max-w-3xl mx-auto space-y-6">
+      <section id="experience" className="py-10 px-8 sm:px-20 bg-orange-300 dark:bg-orange-800">
+        <h2 className="text-4xl font-extrabold text-center mb-8">Work Experience</h2>
+        <div className="mx-auto flex flex-col md:flex-row gap-6" style={{ maxWidth: "100rem" }}>
           {/* Job 1 */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold">Software Engineer</h3>
+          <div className="flex-1 bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold">Software Engineer</h3>
+              <p className="text-sm text-gray-500">Aug 2022 - May 2024</p>
+            </div>
             <p className="text-sm text-gray-500">Epic Systems - Verona, WI</p>
             <p className="mt-2">
-              Worked collaboratively with cross-functional teams to design, develop, and enhance both internal and external software applications, resulting in improved user experience. Mainly used C#, TypeScript, React, and SQL to develop resonsive software applications at large scale.
+              Worked with cross-functional teams to design and both internal and customer-facing software applications. Mainly used <span className="font-bold text-orange-500">C#, TypeScript, React, and SQL</span> to develop responsive software applications at scale.
             </p>
           </div>
           {/* Job 2 */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-            <h3 className="text-xl font-semibold">Researcher</h3>
+          <div className="flex-1 bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold">Researcher</h3>
+              <p className="text-sm text-gray-500">Jan 2020 - May 2022</p>
+            </div>
             <p className="text-sm text-gray-500">Burton Lab - Atlanta, GA</p>
             <p className="mt-2">
-              Managed multiple online and in-person research projects, utilizing a diverse range of software, coding languages, and algorithms to analyze and model soft matter phenomena. Used Python, MATLAB, and TensorFlow to incorporate machine learning into research projects.
+              Managed multiple online and in-person research projects to analyze soft matter behavior in different environments. Mainly used <span className="font-bold text-orange-500">Python, MATLAB, and TensorFlow</span> to incorporate machine learning into research projects.
             </p>
             <p className="mt-2">
-              Honors Thesis: <a href="https://etd.library.emory.edu/concern/etds/m900nv74g?locale=en" className="text-blue-500 hover:underline">"Accurate Imaging of Particle Motion in Dusty Plasmas"</a>
+              Honors Thesis: 
+              <a 
+                href="https://etd.library.emory.edu/concern/etds/m900nv74g?locale=en" 
+                className="text-blue-500 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer">
+                "Accurate Imaging of Particle Motion in Dusty Plasmas"
+              </a>
             </p>
             <p className="mt-2">
-              Publications: <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.035303" className="text-blue-500 hover:underline">"Extracting forces from noisy dynamics in dusty plasmas"</a>
+              Publications: 
+              <a href="https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.035303" 
+                className="text-blue-500 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer">
+                "Extracting forces from noisy dynamics in dusty plasmas"
+              </a>
             </p>
+          </div>
+          {/* Job 3 */}
+          <div className="flex-1 bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold">Tutor</h3>
+              <p className="text-sm text-gray-500">Forever</p>
+            </div>
+            <p className="text-sm text-gray-500">Wherever I am</p>
+            <p className="mt-2">
+              As much as I like to learn, I love to help others learn even more.
+            </p>
+            <ul className="list-disc list-outside pl-5">
+              <li className="flex items-start">
+                <span className="min-w-[6rem] text-gray-500">2013-present</span>
+                <span className="ml-2">Math tutor</span>
+              </li>
+              <li className="flex items-start">
+                <span className="min-w-[6rem] text-gray-500">2018-present</span>
+                <span className="ml-2">SAT tutor</span>
+              </li>
+              <li className="flex items-start">
+                <span className="min-w-[6rem] text-gray-500">2020-2022</span>
+                <span className="ml-2">Organic Chemistry Teaching Assistant</span>
+              </li>
+              <li className="flex items-start">
+                <span className="min-w-[6rem] text-gray-500">2024-present</span>
+                <span className="ml-2">Computer Science tutor</span>
+              </li>
+            </ul>
+            <p className="mt-2">My learning resources:</p>
+            <a 
+              className="text-blue-500 hover:underline" 
+              href="https://github.com/hjblloop/Brainmax"
+              target="_blank"
+              rel="noopener noreferrer">
+              GongBu
+            </a>
           </div>
         </div>
       </section>
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-8 sm:px-20">
-        <h2 className="text-3xl font-bold text-center mb-8">Skills</h2>
+      <section id="skills" className="py-10 px-8 sm:px-20 bg-gradient-to-b from-blue-400 to-blue-500">
+        <h2 className="text-4xl font-extrabold text-center mb-8">Skills</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/Typescript_logo_2020.svg"
-              alt="TypeScript"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Image
+                src="/logos/TypeScript_logo_2020.svg"
+                alt="Node.js"
+                width={100}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <h3 className="text-lg font-semibold">TypeScript</h3>
           </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/react-icon.svg"
-              alt="React"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Image
+                src="/logos/React-icon.svg"
+                alt="Node.js"
+                width={100}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <h3 className="text-lg font-semibold">React</h3>
           </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/Nextjs-logo.svg"
-              alt="Next.js"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-7">
+              <Image
+                src="/logos/Nextjs-logo.svg"
+                alt="Node.js"
+                width={180}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <h3 className="text-lg font-semibold">Next.js</h3>
           </div>
-           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/Node.js_logo.svg"
-              alt="Node.js"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Image
+                src="/logos/Node.js_logo.svg"
+                alt="Node.js"
+                width={130}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+            <h3 className="text-lg font-semibold">Node.js</h3>
+          </div>
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Image
+                src="/logos/Postgresql_elephant.svg"
+                alt="Node.js"
+                width={100}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <h3 className="text-lg font-semibold">PostgreSQL</h3>
           </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/Postgresql_elephant.svg"
-              alt="PostgreSQL"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
-            <h3 className="text-lg font-semibold">PostgreSQL</h3>
-          </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/python-logo-notext.svg"
-              alt="Python"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Image
+                src="/logos/Python-logo-notext.svg"
+                alt="Node.js"
+                width={100}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <h3 className="text-lg font-semibold">Python</h3>
           </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/Javascript_Logo.png"
-              alt="JavaScript"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Image
+                src="/logos/Javascript_Logo.png"
+                alt="Node.js"
+                width={100}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <h3 className="text-lg font-semibold">JavaScript</h3>
           </div>
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 text-center">
-            <Image
-              src="/logos/Git-logo.svg"
-              alt="Git"
-              width={50}
-              height={50}
-              className="mx-auto mb-4"
-            />
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
+            <div className="flex items-center justify-center mb-4">
+              <Image
+                src="/logos/Git-logo.svg"
+                alt="Node.js"
+                width={100}
+                height={64}
+                className="object-contain"
+              />
+            </div>
             <h3 className="text-lg font-semibold">Git</h3>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-8 sm:px-20 bg-gray-200 dark:bg-gray-800">
-        <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
+      <section id="projects" className="py-20 px-8 sm:px-20 bg-orange-300 dark:bg-orange-800">
+        <h2 className="text-4xl font-extrabold text-center mb-8">Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Project 1 */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 items-center justify-center flex flex-col">
             <Image
-              src="/project1.png"
+              src="/GongBu.png"
               alt="Easy Invoice"
               width={400}
               height={200}
-              className="rounded-md"
+              className="rounded-md items-center justify-center"
             />
-            <h3 className="text-xl font-semibold mt-4">GongBu</h3>
+            <h3 className="text-2xl font-semibold mt-4">GongBu</h3>
             <p className="text-sm mt-2">
-              An AI-powered interactive learning tool allowing users to learn specific topics through personalized learning. Built with TypeScript, React, PostgreSQL and Google Gemini.
+              An AI-powered interactive learning tool allowing users to learn specific topics through personalized learning. Built with <span className="text-blue-600 font-bold">TypeScript, React, PostgreSQL</span> and <span className="text-blue-600 font-bold">Google Gemini</span>.
             </p>
             <a
-              href="#"
+              href="https://github.com/hjblloop/Brainmax"
               className="inline-block mt-4 text-blue-500 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View Project →
             </a>
           </div>
           {/* Project 2 */}
-          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col justify-center items-center">
             <Image
-              src="/project2.png"
+              src="/HeatEquation.png"
               alt="BrainMax"
               width={400}
               height={200}
               className="rounded-md"
             />
-            <h3 className="text-xl font-semibold mt-4">Math Modeling</h3>
+            <h3 className="text-2xl font-semibold mt-4">Math Modeling</h3>
             <p className="text-sm mt-2">
-              A math library to visualize advanced math and physics concepts. Built with Python, pandas, and numpy.
+              A math library to visualize advanced math and physics concepts. Built with <span className="text-blue-600 font-bold">Python, pandas</span> and <span className="text-blue-600 font-bold">numpy</span>.
             </p>
             <a
-              href="#"
+              href="https://github.com/hjblloop/makemathprettyagain"
               className="inline-block mt-4 text-blue-500 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               View Project →
             </a>
@@ -188,7 +310,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-8 sm:px-20">
+      {/* <section id="contact" className="py-20 px-8 sm:px-20">
         <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
         <form className="max-w-lg mx-auto space-y-4">
           <input
@@ -213,11 +335,11 @@ export default function Home() {
             Send Message
           </button>
         </form>
-      </section>
+      </section> */}
       {/* Footer */}
-      <footer className="py-6 text-center bg-gray-300 dark:bg-gray-700">
+      <footer className="py-6 text-center bg-gray-300">
         <p className="text-sm">
-          © {new Date().getFullYear()} Jonathan. All rights reserved.
+          © {new Date().getFullYear()} Jonathan Cho. All rights reserved.
         </p>
       </footer>
     </div>
