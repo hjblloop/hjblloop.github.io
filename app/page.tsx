@@ -161,8 +161,8 @@ export default function Home() {
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center text-center">
             <div className="flex items-center justify-center mb-4">
               <Image
-                src="/logos/TypeScript_logo_2020.svg"
-                alt="Node.js"
+                src="/logos/TypeScript_logo.svg"
+                alt="Typescript Logo"
                 width={100}
                 height={64}
                 className="object-contain"
