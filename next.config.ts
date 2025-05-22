@@ -5,3 +5,11 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+const isGithubPages = process.env.GITHUB_PAGES === 'true';
+
+module.exports = {
+  assetPrefix: isGithubPages ? '/Portfolio' : '',
+  basePath: isGithubPages ? '/Portfolio' : '',
+  output: 'export', // static export
+};
