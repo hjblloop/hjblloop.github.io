@@ -15,9 +15,10 @@
 
 # next.js
 /.next/
-/out/
+#/out/
 
 # production
+# commenting out to push to production
 #/build
 
 # misc
