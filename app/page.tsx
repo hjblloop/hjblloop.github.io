@@ -3,6 +3,7 @@
 import Image from "next/image";
 import VolleyBall from './VolleyBall';
 import {useState} from 'react';
+import './globals.css';
 
 export default function Home() {
   const [showSpeech, setShowSpeech] = useState(false);
