@@ -75,6 +75,24 @@ export default function Home() {
       <section id="experience" className="py-10 px-8 sm:px-20 bg-orange-300 dark:bg-orange-800">
         <h2 className="text-4xl font-extrabold text-center mb-8">Work Experience</h2>
         <div className="mx-auto flex flex-col md:flex-row gap-6" style={{ maxWidth: "100rem" }}>
+          {/* Job 3 */}
+          <div className="flex-1 bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-semibold">Founder and Lead Developer</h3>
+              <p className="text-sm text-gray-500">May 2024 - June 2025</p>
+            </div>
+            <p className="text-sm text-gray-500">GongBu AI</p>
+            <p className="mt-2">
+              Developed an AI-driven interactive learning tool that helped hundreds of users to master specific topics through personalized learning. Used TypeScript, React, PostgreSQL and Google Gemini to build a scalable and responsive system.
+            </p>
+            <a 
+              className="text-blue-500 hover:underline" 
+              href="https://github.com/hjblloop/Brainmax"
+              target="_blank"
+              rel="noopener noreferrer">
+              GongBu
+            </a>
+          </div>
           {/* Job 1 */}
           <div className="flex-1 bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
             <div className="flex items-center justify-between">
@@ -115,43 +133,6 @@ export default function Home() {
                 "Extracting forces from noisy dynamics in dusty plasmas"
               </a>
             </p>
-          </div>
-          {/* Job 3 */}
-          <div className="flex-1 bg-white dark:bg-gray-700 rounded-lg shadow-md p-6">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xl font-semibold">Tutor</h3>
-              <p className="text-sm text-gray-500">Forever</p>
-            </div>
-            <p className="text-sm text-gray-500">Wherever I am</p>
-            <p className="mt-2">
-              As much as I like to learn, I love to help others learn even more.
-            </p>
-            <ul className="list-disc list-outside pl-5">
-              <li className="flex items-start">
-                <span className="min-w-[6rem] text-gray-500">2013-present</span>
-                <span className="ml-2">Math tutor</span>
-              </li>
-              <li className="flex items-start">
-                <span className="min-w-[6rem] text-gray-500">2018-present</span>
-                <span className="ml-2">SAT tutor</span>
-              </li>
-              <li className="flex items-start">
-                <span className="min-w-[6rem] text-gray-500">2020-2022</span>
-                <span className="ml-2">Organic Chemistry Teaching Assistant</span>
-              </li>
-              <li className="flex items-start">
-                <span className="min-w-[6rem] text-gray-500">2024-present</span>
-                <span className="ml-2">Computer Science tutor</span>
-              </li>
-            </ul>
-            <p className="mt-2">My learning resources:</p>
-            <a 
-              className="text-blue-500 hover:underline" 
-              href="https://github.com/hjblloop/Brainmax"
-              target="_blank"
-              rel="noopener noreferrer">
-              GongBu
-            </a>
           </div>
         </div>
       </section>
@@ -271,7 +252,7 @@ export default function Home() {
               height={200}
               className="rounded-md items-center justify-center"
             />
-            <h3 className="text-2xl font-semibold mt-4">GongBu</h3>
+            <h3 className="text-2xl font-semibold mt-4">GongBu AI</h3>
             <p className="text-sm mt-2">
               An AI-powered interactive learning tool allowing users to learn specific topics through personalized learning. Built with <span className="text-blue-600 font-bold">TypeScript, React, PostgreSQL</span> and <span className="text-blue-600 font-bold">Google Gemini</span>.
             </p>

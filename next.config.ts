@@ -1,10 +1,11 @@
 import type { NextConfig } from "next";
 
-//change to '' when running build locally. switch to github when deploying to prod
+//change to false when running build locally. switch to true when deploying to prod
+const prod = true;
 const nextConfig: NextConfig = {
     output: 'export',
-    basePath: '/hjblloop.github.io',
-    assetPrefix: '/hjblloop.github.io/',
+    basePath: prod ? '/hjblloop.github.io' : '',
+    assetPrefix: prod ? '/hjblloop.github.io/' : '',
 };
 
 export default nextConfig;
