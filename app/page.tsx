@@ -68,22 +68,19 @@ export default function Home() {
       </header>
       {/* System Deep Dives Section */}
       <section className=" font-sans">
-
         <div id="modal-backdrop" className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
           <div className="bg-white w-full max-w-5xl max-h-[90vh] rounded-2xl shadow-2xl overflow-y-auto">
             <div id="modal-content" className="p-6 md:p-12">
               </div>
           </div>
         </div>
-
-        <section id="deepDives" className="max-w-5xl mx-auto py-20 px-6">
+        <section id="deepDives" className="max-w-5xl mx-auto mb-20 px-6">
           <h2 className="text-4xl font-extrabold text-center mb-8">System Deep Dives</h2>
-          
           <div className="grid md:grid-cols-2 gap-8">
             <button onClick={() => openModal('pos-system')} className="group p-4 text-left bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer hover:border-blue-500 hover:shadow-lg transition-all">
-              <div className="aspect-video bg-slate-100 overflow-hidden flex items-center justify-center">
+              <div className="aspect-[16/12] bg-slate-100 overflow-hidden flex items-center justify-center">
                 <img 
-                  src='AdviseMe.png'
+                  src='pos.png'
                   alt={`POS Preview`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy" 
@@ -96,7 +93,7 @@ export default function Home() {
               </div>
             </button>
             <button onClick={() => openModal('financial-advisory-ecosystem')} className="group p-4 text-left bg-white border border-slate-200 rounded-2xl overflow-hidden cursor-pointer hover:border-blue-500 hover:shadow-lg transition-all">
-              <div className="aspect-video bg-slate-100 overflow-hidden flex items-center justify-center">
+              <div className="aspect-[16/12] bg-slate-100 overflow-hidden flex items-center justify-center">
                 <img 
                   src='AdviseMe.png'
                   alt={`POS Preview`}
@@ -104,7 +101,7 @@ export default function Home() {
                   loading="lazy" 
                 />
               </div>
-              <div className="p-6">
+              <div className="mt-6">
                 <h3 className="text-xl font-bold group-hover:text-blue-600 transition">Financial Advisory Ecosystem</h3>
                 <p className="text-slate-600 text-sm mt-2 line-clamp-2">Developed a high-security financial ecosystem designed to bridge the gap between professional advisors and eager investors. </p>
                 <p className="mt-4 text-blue-600 text-xs font-bold uppercase tracking-wider">View Deep Dive &rarr;</p>
@@ -123,8 +120,25 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-20 px-8 sm:px-20">
         <h2 className="text-4xl font-extrabold text-center mb-8">Projects</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Project 2 */}
+        <div className="grid grid-cols-2 gap-8 ">
+          <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col justify-center items-center">
+            <Image
+              src="/trading.png"
+              alt="Trading"
+              width={400}
+              height={200}
+              className="rounded-md"
+            />
+            <h3 className="text-2xl font-semibold mt-4">Market Replay Engine</h3>
+            <p className="text-sm mt-2">
+              A deterministic market replay engine in C++ designed to simulate trading environments. Engineered a synchronized event-loop that streams historical 1-minute OHLCV data at variable timescales, allowing for the rigorous backtesting of trading strategies against authentic market volatility and liquidity patterns. 
+            </p>
+            <div
+              className="inline-block mt-4 text-red-500"
+            >
+              Under Construction
+            </div>
+          </div>
           <div className="bg-white dark:bg-gray-700 rounded-lg shadow-md p-6 flex flex-col justify-center items-center">
             <Image
               src="/HeatEquation.png"
